@@ -20,6 +20,7 @@ resource "aws_cloudfront_distribution" "main" {
     cached_methods         = ["GET", "HEAD"]
     allowed_methods        = ["GET", "HEAD"]
     forwarded_values {
+      headers = ["Origin"]
       query_string = false
       cookies {
         forward = "none"
